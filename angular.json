@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-redisenio-temp": {
+    "homeSaludsa": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-redisenio-temp",
+            "outputPath": "dist/home-saludsa",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,14 +37,13 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -50,7 +59,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -64,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-redisenio-temp:build:production"
+              "buildTarget": "homeSaludsa:build:production"
             },
             "development": {
-              "buildTarget": "angular-redisenio-temp:build:development"
+              "buildTarget": "homeSaludsa:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,6 +100,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -99,6 +110,6 @@
     }
   },
   "cli": {
-    "analytics": "ac6bd9ef-7278-4a21-b355-8834cd262909"
+    "analytics": "a51272f8-b183-4a17-ab07-4ec465e63cec"
   }
 }
