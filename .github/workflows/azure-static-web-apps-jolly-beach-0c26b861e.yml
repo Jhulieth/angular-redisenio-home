@@ -26,9 +26,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_BEACH_0C26B861E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          app_location: "angular-redisenio-temp"           
+          app_location: "."           
           api_location: ""                                
-          app_artifact_location: "angular-redisenio-temp/dist/home-saludsa/browser"
+          app_artifact_location: "dist/home-saludsa/browser"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
